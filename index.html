@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巧克力蛋糕介紹 - 巧克力蛋糕愛好者的最愛</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* 基本設置 */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* 頂部導航欄 */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 8px 18px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em; /* 調整字體大小 */
+            padding: 5px 12px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #9e5b3d;
+            transform: scale(1.1);
+        }
+
+        /* 首頁大圖區 */
+        .hero {
+            background-color: #9e5b3d;
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;  /* 調整上部與下部內邊距 */
+            font-size: 1.8em;     /* 縮小字體 */
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 2.2em; /* 縮小標題字體大小 */
+            font-family: 'Lora', serif;
+        }
+
+        .hero p {
+            font-size: 1.1em; /* 縮小段落字體 */
+            margin-top: 15px;
+            font-family: 'Lora', serif;
+        }
+
+        /* 內容區域 */
+        .content {
+            padding: 60px 20px;
+            text-align: center; /* 讓文字內容居中 */
+            opacity: 0;
+            animation: fadeInContent 1.5s forwards;
+        }
+
+        @keyframes fadeInContent {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .content img {
+            width: 90%;
+            max-width: 600px;
+            border-radius: 15px;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeInImg 1s ease-out forwards;
+        }
+
+        @keyframes fadeInImg {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .content h2 {
+            font-size: 2.5em;
+            color: #9e5b3d;
+            font-family: 'Lora', serif;
+            margin-bottom: 20px; /* 增加標題與段落的間距 */
+        }
+
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: 'Lora', serif;
+        }
+
+        /* 製作方法區 */
+        #how-to-make {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+            text-align: center;  /* 讓標題和段落文字居中 */
+        }
+
+        ol {
+            text-align: left;
+            font-size: 1.1em;  /* 字體縮小 */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ol li {
+            margin: 15px 0;
+        }
+
+        /* 画廊區 */
+        #gallery {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeInGallery 1s forwards;
+        }
+
+        @keyframes fadeInGallery {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* 底部 */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Lora', serif;
+            font-size: 1em;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 導航欄 -->
+    <div class="navbar">
+        <a href="#">首頁</a>
+        <a href="#about">關於巧克力蛋糕</a>
+        <a href="#how-to-make">如何製作</a>
+        <a href="#gallery">畫廊</a>
+    </div>
+
+    <!-- 首頁大圖 -->
+    <div class="hero">
+        <h1>歡迎來到巧克力蛋糕的世界</h1>
+        <p>了解巧克力的歷史、風味及製作方法，讓我們一起深入探索這杯經典飲品！</p>
+    </div>
+
+    <!-- 內容區域 -->
+    <div id="about" class="content">
+        <h2>什麼是巧克力？</h2>
+        <p>巧克力由可可樹（Theobroma，意為神的果實子）的產物可可豆製作而成。可可豆有一種強烈的苦味，必須經過發酵才能形成其獨特的風味。發酵後，可可豆經曬乾、清洗和烘烤；剝去外殼後，將其磨成可可塊，即無任何添加的粗製巧克力，可可塊通過加熱而液化後則被稱為可可液。可可液也可以通過冷卻和加工來製作可可粉和可可脂(不屬於糖果)。
+
+</p>
+        <img src="https://diz36nn4q02zr.cloudfront.net/webapi/imagesV3/Cropped/SalePage/10309572/0/638695529948770000?v=1" alt="摩卡咖啡">
+    </div>
+
+    <!-- 製作方法 -->
+    <div id="how-to-make" class="content">
+        <h2>如何製作巧克力蛋糕</h2>
+        <p>巧克力蛋糕的製作方式相對簡單，只需幾種食材即可在家中輕鬆完成：</p>
+        <ol>
+            <li><strong><p><p/>可可豆有一種強烈的苦味，必須經過發酵才能形成其獨特的風味。發酵後，可可豆經曬乾、清洗和烘烤；剝去外殼後，將其磨成可可塊，即無任何添加的粗製巧克力，可可塊通過加熱而液化後則被稱為可可液。可可液也可以通過冷卻和加工來製作可可粉和可可脂</li>
+                </ul>
+            </li>
+        </ol>
+        <img src="https://cdn.cybassets.com/media/W1siZiIsIjE3Mzg2L3Byb2R1Y3RzLzQyNTQ1Njc3LzE2OTcwMTU1MDJfZDU3OTA2OGU4NzQyMDI3NmQwOTMuanBlZyJdLFsicCIsInRodW1iIiwiMjA0OHgyMDQ4Il1d.jpeg?sha=eaf6de3a07ef33be"="製作美式咖啡">
+    </div>
+
+    <!-- 画廊 -->
+    <div id="gallery" class="content">
+        <h2>巧克力蛋糕畫廊</h2>
+        <p>來看看一些美麗的巧克力蛋糕圖片，感受它的魅力。</p>
+        <div class="gallery">
+            <img src="https://www.shinehouse.com.tw/cdn/shop/products/chocolate-and-ganachecherry-layer-cake-6-539068.jpg?v=1681895561" alt="摩卡咖啡1">
+            <img src="https://img.cloudimg.in/uploads/shops/27978/products/49/4943383c00ec4f0109d0449d51dbd407.jpg" alt="摩卡咖啡2">
+            <img src="https://www.rosacake.com/image/cache/data/prod/pro-5-720x720.png" alt="摩卡咖啡3">
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer>
+        <p>&copy; 2024 摩卡咖啡愛好者 | <a href="mailto:contact@moka.com">聯絡我們</a></p>
+    </footer>
+
+</body>
+</html>
